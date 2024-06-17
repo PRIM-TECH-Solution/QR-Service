@@ -55,7 +55,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/order-summary/**","https://sandbox.payhere.lk","https://www.payhere.lk",
-                                "api/generateQRAndSendEmail/{orderId}","api/downloadQR/{orderId}","/tickets//create").permitAll()
+                                "api/generateQRAndSendEmail/{orderId}","api/downloadQR/{orderId}","/tickets/create").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults());
